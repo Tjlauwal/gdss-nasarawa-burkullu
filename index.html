@@ -1,0 +1,848 @@
+ ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GDSS NASARAWA BURKULLU | Home</title>
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(135deg, #006400, #008f45);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .school-logo {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 16px;
+            margin: 3px 0;
+        }
+
+        .motto {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background: #003d00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 16px 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #008f45;
+            color: #ffd700;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 70, 20, 0.88),
+                    rgba(0, 40, 15, 0.90)
+                ),
+                url("image/school logo.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .hero-content p {
+            font-size: 19px;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-button {
+            background: #ffd700;
+            color: #003300;
+        }
+
+        .secondary-button {
+            background: white;
+            color: #006400;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: 50px auto;
+        }
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            color: #006400;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        .welcome {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .welcome h2 {
+            color: #006400;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .welcome p {
+            max-width: 850px;
+            margin: 10px auto;
+            font-size: 17px;
+        }
+
+        /* =========================
+           FEATURE CARDS
+        ========================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 22px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid #006400;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #006400;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        /* =========================
+           QUICK LINKS
+        ========================= */
+
+        .quick-links {
+            background: linear-gradient(135deg, #006400, #008f45);
+            padding: 45px 25px;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .quick-links h2 {
+            margin-bottom: 25px;
+            font-size: 30px;
+        }
+
+        .quick-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .quick-button {
+            background: white;
+            color: #006400;
+            text-decoration: none;
+            padding: 13px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .quick-button:hover {
+            background: #ffd700;
+            color: #003300;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           CORE VALUES
+        ========================= */
+
+        .values {
+            background: white;
+            padding: 40px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .value-box {
+            background: #f1f7f3;
+            padding: 25px 18px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .value-box h3 {
+            color: #006400;
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        /* =========================
+           CONTACT STRIP
+        ========================= */
+
+        .contact-strip {
+            margin-top: 50px;
+            background: #003d00;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .contact-strip h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-strip p {
+            margin: 6px 0;
+        }
+
+        .contact-strip a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #002900;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+
+        footer p {
+            margin: 7px 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .developer {
+            color: #ffd700;
+            font-weight: bold;
+            margin-top: 18px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            .hero {
+                min-height: 420px;
+                padding: 55px 20px;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+
+            .cards,
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                position: relative;
+            }
+
+            nav a {
+                width: 50%;
+                text-align: center;
+                padding: 12px 5px;
+                font-size: 14px;
+            }
+
+            .school-logo {
+                width: 105px;
+                height: 105px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            .hero-content h2 {
+                font-size: 28px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-button {
+                width: 220px;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SCHOOL HEADER
+    ========================= -->
+
+    <header>
+
+        <img
+            src="image/school logo.jpg"
+            class="school-logo"
+            alt="GDSS NASARAWA BURKULLU School Logo"
+        >
+
+        <h1>GDSS NASARAWA BURKULLU</h1>
+
+        <p>Government Day Secondary School</p>
+
+        <p class="motto">
+            Knowledge, Discipline and Excellence
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="admission.html">Admission</a>
+
+        <a href="staff.html">Staff</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>
+                Welcome to GDSS NASARAWA BURKULLU
+            </h2>
+
+            <p>
+                A place where knowledge is developed,
+                discipline is encouraged, and students
+                are prepared for a successful future.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="about.html"
+                    class="hero-button primary-button"
+                >
+                    Discover Our School
+                </a>
+
+                <a
+                    href="admission.html"
+                    class="hero-button secondary-button"
+                >
+                    Admission Information
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
+
+    <main class="container">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome">
+
+            <h2>
+                Welcome to Our School
+            </h2>
+
+            <p>
+                GDSS NASARAWA BURKULLU is committed to
+                providing quality secondary education in
+                a supportive, disciplined and productive
+                learning environment.
+            </p>
+
+            <p>
+                We aim to help students develop knowledge,
+                skills, character and confidence for their
+                education and future careers.
+            </p>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section>
+
+            <div class="section-title">
+
+                <h2>
+                    What We Stand For
+                </h2>
+
+                <p>
+                    Building students for knowledge, character and excellence.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <div class="card-icon">📚</div>
+
+                    <h3>
+                        Quality Education
+                    </h3>
+
+                    <p>
+                        We are committed to providing students
+                        with quality education and meaningful
+                        learning experiences.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🎓</div>
+
+                    <h3>
+                        Discipline
+                    </h3>
+
+                    <p>
+                        We encourage good character,
+                        responsibility, respect and discipline
+                        among our students.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">🏆</div>
+
+                    <h3>
+                        Excellence
+                    </h3>
+
+                    <p>
+                        We encourage every student to work hard,
+                        develop their talents and strive for
+                        excellence.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK LINKS -->
+
+        <section class="quick-links">
+
+            <h2>
+                Explore Our School
+            </h2>
+
+            <div class="quick-buttons">
+
+                <a
+                    href="about.html"
+                    class="quick-button"
+                >
+                    About Us
+                </a>
+
+                <a
+                    href="admission.html"
+                    class="quick-button"
+                >
+                    Admission
+                </a>
+
+                <a
+                    href="staff.html"
+                    class="quick-button"
+                >
+                    Meet Our Staff
+                </a>
+
+                <a
+                    href="gallery.html"
+                    class="quick-button"
+                >
+                    School Gallery
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="quick-button"
+                >
+                    Contact Us
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CORE VALUES -->
+
+        <section class="values">
+
+            <div class="section-title">
+
+                <h2>
+                    Our Core Values
+                </h2>
+
+                <p>
+                    The principles that guide our school community.
+                </p>
+
+            </div>
+
+
+            <div class="values-list">
+
+
+                <div class="value-box">
+
+                    <h3>
+                        Knowledge
+                    </h3>
+
+                    <p>
+                        Building strong academic knowledge
+                        and lifelong learning skills.
+                    </p>
+
+                </div>
+
+
+                <div class="value-box">
+
+                    <h3>
+                        Discipline
+                    </h3>
+
+                    <p>
+                        Developing responsible and respectful
+                        members of society.
+                    </p>
+
+                </div>
+
+
+                <div class="value-box">
+
+                    <h3>
+                        Excellence
+                    </h3>
+
+                    <p>
+                        Encouraging students to achieve
+                        their highest potential.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT STRIP -->
+
+        <section class="contact-strip">
+
+            <h2>
+                Get In Touch
+            </h2>
+
+            <p>
+                GDSS NASARAWA BURKULLU
+            </p>
+
+            <p>
+                Phone:
+                08066312966 |
+                08085278002 |
+                08032892916 |
+                08062500628
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:gdssnasarawaburkullu767@gmail.com">
+                    gdssnasarawaburkullu767@gmail.com
+                </a>
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <h3>
+            GDSS NASARAWA BURKULLU
+        </h3>
+
+        <p>
+            Government Day Secondary School
+        </p>
+
+        <p>
+            Knowledge, Discipline and Excellence
+        </p>
+
+        <p class="developer">
+            Developed by Tajudeen Lauwali
+        </p>
+
+        <p>
+            08062500628 | 09015844419
+        </p>
+
+        <p>
+            © 2026 GDSS Nasarawa Burkullu.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```

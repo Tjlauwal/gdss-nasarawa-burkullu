@@ -1,0 +1,374 @@
+ ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff - GDSS NASARAWA BURKULLU</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f8f4;
+            color: #222;
+        }
+
+        header {
+            background-color: #087a3b;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 50%;
+            background-color: white;
+            padding: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            margin: 12px 0 5px;
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #055d2d;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 18px;
+            display: block;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0b9148;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #087a3b;
+            margin-bottom: 20px;
+        }
+
+        #staffSearch {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 25px;
+            padding: 12px;
+            border: 2px solid #087a3b;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        th {
+            background-color: #087a3b;
+            color: white;
+            padding: 14px 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f7f3;
+        }
+
+        tr:hover {
+            background-color: #e3f2e8;
+        }
+
+        footer {
+            margin-top: 40px;
+            background-color: #055d2d;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        footer p {
+            margin: 7px 0;
+        }
+
+        .developer {
+            font-weight: bold;
+        }
+
+        .developer-phone {
+            font-size: 15px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            .logo {
+                width: 90px;
+                height: 90px;
+            }
+
+            nav a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+
+            .container {
+                width: 98%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <img
+            src="image/school%20logo.jpg"
+            alt="GDSS NASARAWA BURKULLU Logo"
+            class="logo"
+        >
+
+        <h1>GDSS NASARAWA BURKULLU</h1>
+
+        <p>Knowledge, Discipline and Excellence</p>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admission.html">Admission</a>
+        <a href="staff.html">Staff</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+
+        <h2 class="page-title">Our Staff</h2>
+
+        <input
+            type="text"
+            id="staffSearch"
+            placeholder="Search staff by name or position..."
+            onkeyup="searchStaff()"
+        >
+
+        <div class="table-container">
+
+            <table id="staffTable">
+
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Qualification</th>
+                        <th>Grade/Level</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>MUKHTARI MAIDAMMA</td>
+                        <td>B.Sc (Ed) Economics</td>
+                        <td>14</td>
+                        <td>Principal</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>MUHAMMAD SALEH</td>
+                        <td>N.C.E Agric Science</td>
+                        <td>13</td>
+                        <td>Vice Principal Admin.</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>ISAH SARKIN ZAMFARA</td>
+                        <td>N.C.E Eng/Hausa</td>
+                        <td>13</td>
+                        <td>Vice Principal Acad.</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>NASIRU SALIHU</td>
+                        <td>N.C.E History/Hausa</td>
+                        <td>14</td>
+                        <td>Exam Officer</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>ABUBAKAR ABDULLAHI</td>
+                        <td>N.C.E History/Islam</td>
+                        <td>13</td>
+                        <td>Admission Officer SSS</td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>ABUBAKAR MUHAMMAD</td>
+                        <td>B.Ed Arabic</td>
+                        <td>12</td>
+                        <td>Admission Officer JSS</td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>KABIRU LIMAN ABUBAKAR</td>
+                        <td>N.C.E Geo/SOS</td>
+                        <td>08</td>
+                        <td>CA Master/Int. Exam Officer</td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>TAJUDEEN LAUWALI</td>
+                        <td>N.C.E Int. Sc./Chem.</td>
+                        <td>09</td>
+                        <td>Press Club Coordinator</td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>ABUBAKAR SULAIMAN</td>
+                        <td>N.C.E/BA Arabic</td>
+                        <td>13</td>
+                        <td>House Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>MANNIRU MUHAMMAD</td>
+                        <td>B.Sc (Ed) Economics</td>
+                        <td>08</td>
+                        <td>House Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td>IBRAHIM MAIDAMMA NASARAWA</td>
+                        <td>B.Sc (Ed) Chemistry</td>
+                        <td>08</td>
+                        <td>House Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>UMAR MUHAMMAD</td>
+                        <td>N.C.E SOS/History</td>
+                        <td>08</td>
+                        <td>Game Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td>NAME TO BE CONFIRMED</td>
+                        <td>B.Sc (Ed) Chemistry</td>
+                        <td>08</td>
+                        <td>Form Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td>ISAH SHEHU B. A.</td>
+                        <td>N.C.E Eng/Hausa</td>
+                        <td>07</td>
+                        <td>Form Master</td>
+                    </tr>
+
+                    <tr>
+                        <td>15</td>
+                        <td>SANI IBRAHIM</td>
+                        <td>N.C.E Eng/Islam</td>
+                        <td>07</td>
+                        <td>Form Master</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>GDSS NASARAWA BURKULLU</p>
+        <p class="developer">Developed By Tajudeen Lauwali</p>
+        <p class="developer-phone">08062500628 | 09015844419</p>
+    </footer>
+
+    <script>
+        function searchStaff() {
+            let input = document.getElementById("staffSearch");
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById("staffTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let text = rows[i].textContent.toLowerCase();
+
+                if (text.includes(filter)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+```

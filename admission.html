@@ -1,0 +1,634 @@
+ ```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admission - GDSS NASARAWA BURKULLU</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #006400, #008000);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .school-logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 15px auto;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 17px;
+            margin: 4px 0;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background: #004d00;
+            text-align: center;
+            padding: 15px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            display: inline-block;
+            padding: 6px 4px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* ================= PAGE BANNER ================= */
+
+        .page-title {
+            background: linear-gradient(
+                rgba(0, 100, 0, 0.92),
+                rgba(0, 77, 0, 0.92)
+            );
+
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .page-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            font-size: 18px;
+        }
+
+        /* ================= MAIN CONTAINER ================= */
+
+        .container {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            color: #006400;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* ================= ADMISSION BOXES ================= */
+
+        .admission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .admission-box {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #006400;
+            transition: 0.3s;
+        }
+
+        .admission-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .admission-box h3 {
+            color: #006400;
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+
+        .admission-box p {
+            margin-bottom: 12px;
+        }
+
+        .admission-box ul {
+            padding-left: 25px;
+        }
+
+        .admission-box li {
+            margin-bottom: 10px;
+        }
+
+        /* ================= ADMISSION PROCESS ================= */
+
+        .process {
+            margin-top: 30px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .process h2 {
+            color: #006400;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            background: #f4f8f5;
+            padding: 25px 15px;
+            border-radius: 10px;
+            border-bottom: 3px solid #006400;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px auto;
+            background: #006400;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .step h3 {
+            color: #006400;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        /* ================= NOTICE ================= */
+
+        .notice {
+            margin-top: 30px;
+            background: #fff8dc;
+            border-left: 6px solid #006400;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .notice h3 {
+            color: #006400;
+            margin-bottom: 10px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            margin-top: 30px;
+            background: white;
+            padding: 35px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-box h2 {
+            color: #006400;
+            margin-bottom: 12px;
+            font-size: 28px;
+        }
+
+        .contact-box p {
+            margin: 8px 0;
+        }
+
+        .contact-box a {
+            color: #006400;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #003300;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .developer {
+            margin-top: 18px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            .school-logo {
+                width: 110px;
+                height: 110px;
+            }
+
+            nav {
+                position: relative;
+                padding: 10px;
+            }
+
+            nav a {
+                display: block;
+                margin: 7px 0;
+                padding: 5px;
+            }
+
+            .page-title {
+                padding: 50px 20px;
+            }
+
+            .page-title h2 {
+                font-size: 30px;
+            }
+
+            .admission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .intro,
+            .admission-box,
+            .process,
+            .contact-box {
+                padding: 25px 20px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <img
+            src="image/school logo.jpg"
+            class="school-logo"
+            alt="GDSS Nasarawa Burkullu School Logo"
+        >
+
+        <h1>GDSS NASARAWA BURKULLU</h1>
+
+        <p>Government Day Secondary School</p>
+
+        <p>
+            <strong>Knowledge, Discipline and Excellence</strong>
+        </p>
+
+    </header>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="admission.html">Admission</a>
+
+        <a href="staff.html">Staff</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h2>School Admission</h2>
+
+        <p>
+            Information for prospective students and parents
+        </p>
+
+    </section>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+
+        <section class="intro">
+
+            <h2>Welcome to Our Admission Page</h2>
+
+            <p>
+                GDSS NASARAWA BURKULLU welcomes students who
+                are ready to learn, develop good character and
+                work towards academic excellence.
+            </p>
+
+        </section>
+
+        <!-- ADMISSION INFORMATION -->
+
+        <section class="admission-grid">
+
+            <div class="admission-box">
+
+                <h3>Admission Requirements</h3>
+
+                <ul>
+
+                    <li>
+                        Prospective students should meet
+                        the applicable admission requirements.
+                    </li>
+
+                    <li>
+                        Students should provide the required
+                        academic documents.
+                    </li>
+
+                    <li>
+                        Parents or guardians should provide
+                        accurate student information.
+                    </li>
+
+                    <li>
+                        All admission procedures should be
+                        completed according to school requirements.
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="admission-box">
+
+                <h3>Important Information</h3>
+
+                <p>
+                    Parents and guardians are encouraged to
+                    contact the school for current admission
+                    information, requirements and procedures.
+                </p>
+
+                <p>
+                    Admission information may change according
+                    to the school's current requirements.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ADMISSION PROCESS -->
+
+        <section class="process">
+
+            <h2>Admission Process</h2>
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">1</div>
+
+                    <h3>Enquiry</h3>
+
+                    <p>
+                        Contact the school for admission
+                        information.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">2</div>
+
+                    <h3>Application</h3>
+
+                    <p>
+                        Obtain and complete the required
+                        admission information.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">3</div>
+
+                    <h3>Verification</h3>
+
+                    <p>
+                        Submit the required documents for
+                        verification.
+                    </p>
+
+                </div>
+
+                <div class="step">
+
+                    <div class="step-number">4</div>
+
+                    <h3>Admission</h3>
+
+                    <p>
+                        Complete the final admission process
+                        as directed by the school.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOTICE -->
+
+        <section class="notice">
+
+            <h3>Important Notice</h3>
+
+            <p>
+                Please contact GDSS NASARAWA BURKULLU directly
+                before making any admission-related decision
+                to confirm the current requirements and
+                procedures.
+            </p>
+
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="contact-box">
+
+            <h2>Need More Information?</h2>
+
+            <p>
+                Contact GDSS NASARAWA BURKULLU using the
+                telephone numbers or email address below.
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                08066312966 |
+                08085278002 |
+                08032892916 |
+                08062500628
+            </p>
+
+            <p>
+
+                <strong>Email:</strong>
+
+                <a href="mailto:gdssnasarawaburkullu767@gmail.com">
+                    gdssnasarawaburkullu767@gmail.com
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>GDSS NASARAWA BURKULLU</h3>
+
+        <p>Government Day Secondary School</p>
+
+        <p>
+            Phone:
+            08066312966 |
+            08085278002 |
+            08032892916 |
+            08062500628
+        </p>
+
+        <p>
+
+            Email:
+
+            <a href="mailto:gdssnasarawaburkullu767@gmail.com">
+                gdssnasarawaburkullu767@gmail.com
+            </a>
+
+        </p>
+
+        <p class="developer">
+            Developed by Tajudeen Lauwali |
+            08062500628 |
+            09015844419
+        </p>
+
+        <p>
+            © 2026 GDSS Nasarawa Burkullu.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
